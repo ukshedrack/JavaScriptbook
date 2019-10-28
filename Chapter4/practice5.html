@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="page">
+		<h1 id="header">List</hl>
+		<h2>Buy groceries</h2>
+		<ul>
+			<li id="one" class="hot"><em>fresh</em> figs</li>
+			<li id="two" class="hot">pine nuts</li>
+			<li id="three" class="hot">honey</li>
+			<li id="four">balsamic vinegar</li>
+			<li id="five"><em>fresh</em> vegetables</li>
+		</ul>
+		<script>
+			//Accessing and Modifying DOM Elements
+			// var x = document.querySelector("li#five");
+			// console.log(x.lastChild.nodeValue); // figs
+			// console.log(x.textContent); // fresh figs
+			// console.log(x.innerText); // fresh figs
+
+			// Removing an element
+			// var removeEl = document.getElementsByTagName('li')[3]; // The element to remove
+			// var containerEl = removeEl.parentNode; // Its containing element
+			// containerEl.removeChild(removeEl); // Removing the element
+
+			// ADDING ITEMS TO START AND END OF LIST
+			var list = document.getElementsByTagName('ul')[0]; // Get the <ul> element
+
+			// ADD NEW ITEM TO END OF LIST
+			var newitemLast = document.createElement('li'); // Create element
+			var newTextLast = document.createTextNode('cream'); // Create text node
+			newitemLast.appendChild(newTextLast); // Add text node to element
+			list.appendChild(newitemLast); // Add element end of list
+
+			// ADD NEW ITEM START OF LIST
+			var newitemFirst = document.createElement('li'); // Create element
+			var newTextFirst = document.createTextNode('kale'); // Create text node
+			newitemFirst.appendChild(newTextFirst); // Add text node to element
+			list.insertBefore(newitemFirst, list.firstChild); // Add element to list
+
+		</script>
+	</div>
+</body>
+</html>

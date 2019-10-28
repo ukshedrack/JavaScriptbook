@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practicing</title>
+</head>
+<body>
+	<form method="post" action="http://www.example.org/register">
+		<label for="username">Create a username: </label>
+		<!-- <input type="text" id="username" onblur="checkUsername()" /> --> <!-- HTML Event Handler -->
+		<input type="text" id="username" onblur="checkUsername()" /> <!-- DOM Event Handler -->
+		<div id="feedback"></div>
+		<label for="password">Create a password: </label>
+		<input type="password" id="password" />
+		<input type="submit" value="Sign up!" />
+	</form>
+	<script type="text/javascript">
+		// Function with no parameters
+		function checkUsername() { 												// Declare function
+			var elMsg = document.getElementById('feedback'); 					// Get feedback element
+			var elUsername = document.getElementById('username');				// Get username input
+			if (elUsername.value.length < 5) {  								// If username too short
+				elMsg.textContent = 'Username must be 5 characters or more';	// Set msg
+			} 	
+			else { 																//Otherwise
+				elMsg.textContent = ''; 										//Clear message
+			}
+		}
+
+		// DOM Event Handler
+		// var elUsername = document.getElementById('username'); // Get username input
+		// elUsername.onblur = checkUsername; 					// When it loses focus call checkuserName()
+
+		// Event Listeners
+		var el = document.getElementById ('username');
+		el.addEventListener('blur', checkUsername, false);
+	</script>
+</body>
+</html>
